@@ -1,0 +1,27 @@
+
+<!--For Showing errors of Form Process-->
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body bg-primary">
+  <h3>Edit Student</h3>
+  <form action="/students/{{students.id}}?_method=PUT" method="post">   <!--11 and 12 line for edit is necessary-->
+  <input type="hidden" name="_method" value="PUT"> 
+    <div class="form-group">
+      <label for="title">Name</label>
+      <input type="text" class="form-control" name="name" value="{{students.name}}" required>
+    </div>
+      <div class="form-group">
+      <label for="title">Father Name</label>
+      <input type="text" class="form-control" name="fathername" value="{{students.fathername}}">
+    </div>
+      <div class="form-group">
+      <label for="title">Mobile # </label>
+      <input type="text" class="form-control" name="mobile" value="{{students.mobile}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

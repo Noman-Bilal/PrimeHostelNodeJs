@@ -1,0 +1,22 @@
+{{#each students}}
+
+<div class="card card-body mb-4 bg-warning  text-justify">
+    
+    <div class="text-success">Name:<h4>{{name}}</h4></div>
+     <hr>
+    Father Name:<h4>{{fathername}}</h4><hr>
+    Mobile # <h4>{{mobile}}</h4>
+    <!--Edit k liye-->
+    <a href="/students/edit/{{id}}" class=" btn btn-dark btn-block mb-3" >Edit Student</a> 
+   
+   <!--Delete k liye form k andr kam karna ku override k zarye del kr rahy-->
+    <form action="/students/{{id}}?_method=DELETE" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="btn btn-danger btn-block" value="DELETE">
+    </form>
+</div>
+
+{{else}}
+<p>No Student Listed.</p>
+
+{{/each}}
