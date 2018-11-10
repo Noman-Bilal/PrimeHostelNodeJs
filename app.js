@@ -15,9 +15,12 @@ const Student = mongoose.model('students');
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
 // Connect to mongoose
-mongoose.connect('mongodb://localhost/Primehostel-dev', {
+
+
+/* mongoose.connect('mongodb://localhost/Primehostel-dev', {
   useMongoClient: true
-})
+}) */
+mongoose.connect('mongodb://hostel:hostel1234@ds111258.mlab.com:11258/primehostel',{ useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
